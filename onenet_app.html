@@ -1,0 +1,55 @@
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>My WebSite(liucanbin)</title> 
+  <script>
+function charUpper()
+{
+	var str=document.getElementById('srcText').value;
+	document.getElementById('desText').value=str.toLocaleUpperCase();
+}
+function superCopy()
+{
+  var str=document.getElementById('srcText').value;
+  var A=str.split("\n");
+  var textArea="srcText";
+  var i;
+  var copySrc="";
+  copySrc+=A[0];
+  textArea+=copySrc+"\r\n";
+  textArea+="**********************************************************\r\n";
+  for ( i=1; i< A.length; i++)
+  {
+      textArea+=copySrc.replace(/[$]/g,A[i]);
+      textArea+="\r\n";
+     //textArea.append(A[i] + "\t\n");
+  }
+  document.getElementById('desText').value=textArea;
+}
+function textClear()
+{
+	document.getElementById('srcText').value="";
+	document.getElementById('desText').value="";
+}
+function textCopy()
+{
+var text=document.getElementById("desText");
+text.select(); // 选择对象
+document.execCommand("Copy"); // 执行浏览器复制命令
+alert("已复制好，可贴粘。");
+}
+</script> 
+ </head> 
+ <body> 
+  <img src="https://open.iot.10086.cn/static/files/common/logo.png" /> 
+  <h1>My WebSite!</h1> 
+  <br /> 
+  <textarea rows="20" cols="60" id="srcText"> adfds13243DSFDS2332dDFDF</textarea> 
+  <textarea rows="20" cols="60" id="desText"> </textarea>
+  <br /> 
+  <button type="button" onclick="charUpper()">转换为大写字母</button> 
+  <button type="button" onclick="superCopy()">超级拷贝</button> 
+  <button type="button" onclick="textClear()">清空内容</button> 
+  <button type="button" onclick="textCopy()">复制内容</button>   
+ </body>
+</html>

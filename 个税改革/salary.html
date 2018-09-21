@@ -1,0 +1,51 @@
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>My WebSite(liucanbin)</title> 
+  <script>
+// function charUpper()
+// {
+// 	var str=document.getElementById('srcText').value;
+// 	document.getElementById('desText').value=str.toLocaleUpperCase();
+// }
+// function textClear()
+// {
+// 	document.getElementById('srcText').value="";
+// 	document.getElementById('desText').value="";
+// }
+// function textCopy()
+// {
+// var text=document.getElementById("desText");
+// text.select(); // 选择对象
+// document.execCommand("Copy"); // 执行浏览器复制命令
+// alert("已复制好，可贴粘。");
+// }
+// 
+  function taxCalculate()
+  {
+    var salary=document.getElementById('salary').vaule;
+    var salaryShow=document.getElementById('salaryShow');
+    salaryShow.text=salary;
+
+
+  }
+</script> 
+ </head> 
+ <body> 
+  <img src="https://open.iot.10086.cn/static/files/common/logo.png" onshow=false/>   <h1>My WebSite!</h1><br>
+    <img style="display:none;" src="./img_show.jpg" /> 
+ 
+  <br /> 
+  <form>
+请输入您当前的税前工资: <input type="text" value="8000" name="salary" id="salary"><br>
+请输入三保险一金抵扣额: <input type="text" value="1000" name="insurace" id="insurace"><br>
+请输入其他抵扣额:      <input type="text"  value="0" name="other" id="other"><br>
+</form>
+<p id="salaryShow">您的工资为：</p>
+  <br /> 
+<!--   <button type="button" onclick="charUpper()">转换为大写字母</button> 
+  <button type="button" onclick="textClear()">清空内容</button> 
+  <button type="button" onclick="textCopy()">复制内容</button>    -->
+  <button type="button" onclick="taxCalculate()">计算纳税额</button>
+ </body>
+</html>
